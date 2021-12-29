@@ -31,8 +31,8 @@ function App() {
             <Routes>
               <Route exact path='/' element={<PrivateRoute />}>
                 <Route exact path='/' element={<Home />} />
+                <Route exact path='/users/:username' element={<UserPage />} />
               </Route>
-              <Route exact path='/users/:username' element={<UserPage />} />
               <Route exact path='/register' element={<Register />} />
               <Route exact path='/login' element={<Login />} />
             </Routes>
