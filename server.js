@@ -10,9 +10,10 @@ import connectDB from "./config/db.js";
 const app = express();
 connectDB();
 
+app.use(express.json({ extended: false }));
+
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json());
 app.use("/api/register", registerRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/search", searchRouter);
