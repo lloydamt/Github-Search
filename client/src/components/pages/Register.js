@@ -31,6 +31,7 @@ const Register = () => {
     if (isAuthenticated) {
       navigate("/");
     }
+    //eslint-disable-next-line
   }, [isAuthenticated, error]);
 
   const onChange = (e) => {

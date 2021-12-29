@@ -26,6 +26,7 @@ const Login = () => {
     if (isAuthenticated) {
       navigate("/");
     }
+    //eslint-disable-next-line
   }, [isAuthenticated, error]);
 
   const onInputChange = (e) => {

@@ -14,6 +14,7 @@ const UserPage = () => {
     loadUser();
     getUser(username);
     getRepos(username);
+    //eslint-disable-next-line
   }, []);
 
   if (loading) return <Spinner />;
