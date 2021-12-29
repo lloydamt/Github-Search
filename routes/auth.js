@@ -14,7 +14,7 @@ const authRouter = express.Router();
 authRouter.get("/", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
-    res.send(user);
+    res.json(user);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
@@ -39,7 +39,7 @@ authRouter.post(
       const user = await User.findOne({ email });
 
       if (!user) {
-        return res.status(400).json({ msg: "User does not exist" });
+        return res.status(404).json({ msg: "User does not exist" });
       }
 
       const check = await bcrypt.compare(password, user.password);
